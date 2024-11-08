@@ -1,4 +1,11 @@
 npx sequelize-cli model:generate --name Disease --attributes name:string
 npx sequelize-cli model:generate --name User --attributes name:string,email:string
 npx sequelize-cli model:generate --name Profile --attributes gender:string,age:integer,address:string
-npx sequelize-cli model:generate --name User_Disease --attributes name:string,description:text,level:integer,UserId:integer,SymptomId:integer
+npx sequelize-cli model:generate --name User_Disease --attributes name:string,description:text,level:integer
+npx sequelize-cli migration:generate --name add-UserId-to-User_Disease
+npx sequelize-cli migration:generate --name add-SymptomId-to-User_Disease
+npx sequelize-cli migration:generate --name add-ProfileId-to-User
+npx sequelize-cli seed:generate --name demo-user
+npx sequelize-cli seed:generate --name demo-disease
+npx sequelize-cli seed:generate --name demo-profile
+npx sequelize-cli seed:generate --name demo-user_disease
